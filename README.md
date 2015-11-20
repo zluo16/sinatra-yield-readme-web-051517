@@ -1,0 +1,92 @@
+# Sinatra Yield Readme
+
+## Objectives
+
+1. Explain what a `yield` statement in `layout.erb` does and why we use it
+2. Implement a yield statement in `layout.erb`
+
+## Layout
+
+If you look at pretty much every website, you'll notice that there are things that exist across all the site's pages. Typically the navigation bar stays the same, and the footer content. Or maybe there are menu options they want across all pages.
+
+You could copy and paste the HTML and ERB for nav bar and make sure that code is in every single erb file, but that isn't at all DRY.
+
+In order to not repeat ourselves, we can create a single file `layout.erb` that contains all the code we want to exist on every single website.
+
+
+Below is the HTML for a website that has a header and links to JavaScript files.
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>Cats</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>I love cats</h1>
+      <img src="https://s3.amazonaws.com/after-school-assets/cat-typing.gif">
+      
+
+      
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+``` 
+
+We want every code to have a head tag with bootstrap's CSS and a link to our own CSS file. The body of our site contains the header `I love cats` and a cat gif. At the bottom, we have our jquery links. 
+
+Now, let's say we have an `index.erb` with the following code:
+
+```html
+<h2>This cat...<h2>
+<img src="https://s3.amazonaws.com/after-school-assets/cat.gif">
+```
+
+### Yield
+
+Now that we have our layout written, how can we get the `layout.erb` loaded around the `index.erb`. 
+
+This is where the `yield` comes in.
+
+In `layout.erb`, we need to add a `yield` wherever we want the other page content to be loaded:
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>Cats</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>I love cats</h1>
+      <img src="https://s3.amazonaws.com/after-school-assets/cat-typing.gif">
+
+      <%= yield%>
+      
+
+      
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+```
+
+If we have a controller action:
+
+```ruby
+get '/' do 
+  erb: index
+```
+
+When the above controller action is triggered, and the `erb` method is called, it looks to see if there is a view titled `layout.erb`. If that file exists, it loads that content around the desired erb file, in this case `index.erb`
+
