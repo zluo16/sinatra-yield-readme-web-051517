@@ -88,5 +88,30 @@ get '/' do
   erb: index
 ```
 
-When the above controller action is triggered, and the `erb` method is called, it looks to see if there is a view titled `layout.erb`. If that file exists, it loads that content around the desired erb file, in this case `index.erb`
+When the above controller action is triggered, and the `erb` method is called, it looks to see if there is a view titled `layout.erb`. If that file exists, it loads that content around the desired erb file, in this case `index.erb`.
+
+The resulting HTML will look like this:
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>Cats</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+
+    <div class="container">
+      
+      <h1>I love cats</h1>
+      <img src="https://s3.amazonaws.com/after-school-assets/cat-typing.gif">
+
+  
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+```
 
