@@ -115,3 +115,5 @@ The resulting HTML will look like this:
 </html>
 ```
 
+
+<a href='https://learn.co/lessons/sinatra-yield-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
