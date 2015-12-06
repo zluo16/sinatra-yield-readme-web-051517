@@ -7,7 +7,7 @@
 
 ## Layout
 
-If you look at pretty much every website, you'll notice that there are things that exist across all the site's pages. Typically the navigation bar stays the same, and the footer content. Or maybe there are menu options they want across all pages.
+If you look at pretty much every website, you'll notice that there are things that exist across all the site's pages. Typically the navigation bar and the footer content stay the same. There may also be menu options that stay consistent across all pages. 
 
 You could copy and paste the HTML and ERB for nav bar and make sure that code is in every single erb file, but that isn't at all DRY.
 
@@ -81,14 +81,14 @@ In `layout.erb`, we need to add a `yield` wherever we want the other page conten
 </html>
 ```
 
-If we have a controller action:
+Let's say we have a controller action:
 
 ```ruby
 get '/' do 
   erb: index
 ```
 
-When the above controller action is triggered, and the `erb` method is called, it looks to see if there is a view titled `layout.erb`. If that file exists, it loads that content around the desired erb file, in this case `index.erb`.
+When the above controller action is triggered and the `erb` method is called, it looks to see if there is a view titled `layout.erb`. If that file exists, it loads that content around the desired erb file, in this case `index.erb`.
 
 The resulting HTML will look like this:
 
