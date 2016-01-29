@@ -50,7 +50,7 @@ Now, let's say we have an `index.erb` with the following code:
 
 ### Yield
 
-Now that we have our layout written, how can we get the `layout.erb` loaded around the `index.erb`. 
+Now that we have our layout written, how can we get the `layout.erb` loaded around the `index.erb`? 
 
 This is where the `yield` comes in.
 
