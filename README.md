@@ -11,7 +11,7 @@ If you look at pretty much every website, you'll notice that there are things th
 
 You could copy and paste the HTML and ERB for nav bar and make sure that code is in every single erb file, but that isn't at all DRY.
 
-In order to not repeat ourselves, we can create a single file `layout.erb` that contains all the code we want to exist on every single website.
+In order to not repeat ourselves, we can create a single file `layout.erb` that contains all the code we want to exist on every single web page.
 
 
 Below is the HTML for a website that has a header and links to JavaScript files.
@@ -117,3 +117,5 @@ The resulting HTML will look like this:
 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-yield-readme' title='Sinatra Yield Readme'>Sinatra Yield Readme</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-yield-readme'>Layouts and Yield</a> on Learn.co and start learning to code for free.</p>
