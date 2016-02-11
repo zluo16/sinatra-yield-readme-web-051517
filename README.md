@@ -86,6 +86,7 @@ Let's say we have a controller action:
 ```ruby
 get '/' do 
   erb: index
+end
 ```
 
 When the above controller action is triggered and the `erb` method is called, it looks to see if there is a view titled `layout.erb`. If that file exists, it loads that content around the desired erb file, in this case `index.erb`.
