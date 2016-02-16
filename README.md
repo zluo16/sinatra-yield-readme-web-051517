@@ -108,6 +108,9 @@ The resulting HTML will look like this:
       <h1>I love cats</h1>
       <img src="https://s3.amazonaws.com/after-school-assets/cat-typing.gif">
 
+      <h2>This cat...<h2>
+      <img src="https://s3.amazonaws.com/after-school-assets/cat.gif">
+
   
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
