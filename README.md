@@ -7,7 +7,7 @@
 
 ## Layout
 
-If you look at pretty much every website, you'll notice that there are things that exist across all the site's pages. Typically the navigation bar and the footer content stay the same. There may also be menu options that stay consistent across all pages. 
+If you look at pretty much every website, you'll notice that there are things that exist across all the site's pages. Typically the navigation bar and the footer content stay the same. There may also be menu options that stay consistent across all pages.
 
 You could copy and paste the HTML and ERB for nav bar and make sure that code is in every single erb file, but that isn't at all DRY.
 
@@ -29,17 +29,17 @@ Below is the HTML for a website that has a header and links to JavaScript files.
     <div class="container">
       <h1>I love cats</h1>
       <img src="https://s3.amazonaws.com/after-school-assets/cat-typing.gif">
-      
 
-      
+
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
-``` 
+```
 
-We want every code to have a head tag with bootstrap's CSS and a link to our own CSS file. The body of our site contains the header `I love cats` and a cat gif. At the bottom, we have our jquery links. 
+We want every code to have a head tag with bootstrap's CSS and a link to our own CSS file. The body of our site contains the header `I love cats` and a cat gif. At the bottom, we have our jquery links.
 
 Now, let's say we have an `index.erb` with the following code:
 
@@ -50,7 +50,7 @@ Now, let's say we have an `index.erb` with the following code:
 
 ### Yield
 
-Now that we have our layout written, how can we get the `layout.erb` loaded around the `index.erb`? 
+Now that we have our layout written, how can we get the `layout.erb` loaded around the `index.erb`?
 
 This is where the `yield` comes in.
 
@@ -71,9 +71,9 @@ In `layout.erb`, we need to add a `yield` wherever we want the other page conten
       <img src="https://s3.amazonaws.com/after-school-assets/cat-typing.gif">
 
       <%= yield%>
-      
 
-      
+
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -84,7 +84,7 @@ In `layout.erb`, we need to add a `yield` wherever we want the other page conten
 Let's say we have a controller action:
 
 ```ruby
-get '/' do 
+get '/' do
   erb: index
 end
 ```
@@ -104,14 +104,14 @@ The resulting HTML will look like this:
   <body>
 
     <div class="container">
-      
+
       <h1>I love cats</h1>
       <img src="https://s3.amazonaws.com/after-school-assets/cat-typing.gif">
 
       <h2>This cat...<h2>
       <img src="https://s3.amazonaws.com/after-school-assets/cat.gif">
 
-  
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
