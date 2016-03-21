@@ -70,7 +70,7 @@ In `layout.erb`, we need to add a `yield` wherever we want the other page conten
       <h1>I love cats</h1>
       <img src="https://s3.amazonaws.com/after-school-assets/cat-typing.gif">
 
-      <%= yield%>
+      <%= yield %>
 
 
 
