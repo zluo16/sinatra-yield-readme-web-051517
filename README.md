@@ -7,12 +7,11 @@
 
 ## Layout
 
-If you look at pretty much every website, you'll notice that there are things that exist across all the site's pages. Typically the navigation bar and the footer content stay the same. There may also be menu options that stay consistent across all pages.
+If you look at pretty much every website, you'll notice that there are things that exist across all of the site's pages. Typically, the navigation bar and the footer content stay the same. There may also be menu options that stay consistent across all pages.
 
 You could copy and paste the HTML and ERB for nav bar and make sure that code is in every single erb file, but that isn't at all DRY.
 
-In order to not repeat ourselves, we can create a single file `layout.erb` that contains all the code we want to exist on every single web page.
-
+In order to not repeat ourselves, we can create a single file, `layout.erb`, that contains all of the code we want to exist on every single web page.
 
 Below is the HTML for a website that has a header and links to JavaScript files.
 
@@ -39,7 +38,7 @@ Below is the HTML for a website that has a header and links to JavaScript files.
 </html>
 ```
 
-We want every code to have a head tag with bootstrap's CSS and a link to our own CSS file. The body of our site contains the header `I love cats` and a cat gif. At the bottom, we have our jquery links.
+We want every page to have a `<head>` tag with links to Bootstrap's and our own CSS files. The body of our site contains the heading `I love cats` and a cat gif. At the bottom, we have our jQuery and Bootstrap links.
 
 Now, let's say we have an `index.erb` with the following code:
 
@@ -119,9 +118,4 @@ The resulting HTML will look like this:
 </html>
 ```
 
-
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-yield-readme' title='Sinatra Yield Readme'>Sinatra Yield Readme</a> on Learn.co and start learning to code for free.</p>
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-yield-readme'>Layouts and Yield</a> on Learn.co and start learning to code for free.</p>
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/sinatra-yield-readme'>Layouts and Yield</a> on Learn.co and start learning to code for free.</p>
